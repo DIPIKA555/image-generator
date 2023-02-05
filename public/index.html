@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/spinner.css" />
+    <script src="https://kit.fontawesome.com/59134409bc.js" crossorigin="anonymous"></script>
+
+    <script src="js/main.js" defer></script>
+    <title>OpenAI Image Genrator</title>
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <div class="logo">
+          <h1 class="heading"><i class="fa-solid fa-file-image"></i> Image Generator</h1>
+          
+        </div>
+        <div class="nav-links">
+          <ul>
+            <li>
+              <a href="https://github.com/Swatisharma175/img-gen" target="_blank"
+                ><i class="fa-brands fa-github fa-2x"></i></a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="main-section">
+      <section class="showcase">
+        <form id="image-form">
+          <h3 class="heading">Describe An Image</h3>
+          <div class="form-control">
+            <input type="text" id="prompt" placeholder="Enter Text" />
+          </div>
+          <!-- size -->
+          <h3 class="heading">Choose Size of Image</h3>
+          <div class="form-control">
+            <div class="button r" id="button-slide">
+              <input type="checkbox" class="checkbox" id="checkbox" />
+              <div class="knobs" id="knobs">
+                <span id="span"></span>
+              </div>
+              <div class="layer"></div>
+            </div>
+          </div>
+          <button type="submit" class="btn">Generate</button>
+        </form>
+      </section>
+
+      <section class="image">
+        <div class="image-container">
+          <h2 class="msg"></h2>
+          <img src="" alt="" id="image" />
+        </div>
+        <div class="spinner"></div>
+      </section>
+    </div>
+    </main>
+   <footer id="footer"><p>This project is made by Swati</p></footer>
+  </body>
+</html>
