@@ -15,7 +15,7 @@ async function generateImageRequest(prompt, size) {
   try {
     document.querySelector('.image-container').innerHTML = '';
     showSpinner();
-    const response = await fetch('http://localhost:5000/openai/generateimage', {
+    const response = await fetch('http://localhost:5000/backend/openai/generateimage', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
