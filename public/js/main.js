@@ -1,9 +1,6 @@
 function onSubmit(e) {
   e.preventDefault();
-
-  document.querySelector('.msg').textContent = '';
-  document.querySelector('#image').src = '';
-
+  
   const prompt = document.querySelector('#prompt').value;
   const size = document.querySelector('#checkbox').checked;
 
@@ -16,6 +13,7 @@ function onSubmit(e) {
 
 async function generateImageRequest(prompt, size) {
   try {
+    document.querySelector('.image-container').innerHTML = '';
     showSpinner();
     const response = await fetch('http://localhost:5000/openai/generateimage', {
       method: 'POST',
@@ -37,12 +35,28 @@ async function generateImageRequest(prompt, size) {
     console.log(data);
 
     const imageUrl = data.data;
+    
+    const image = document.querySelector('.image-container');
+    const markup = document.createElement('img');
+    console.log(imageUrl);
+    markup.src = imageUrl;
+    image.insertAdjacentElement('beforeend', markup);
+    const link = document.createElement('a');
+    link.href = (imageUrl);
+    link.target = ('_blank');
+    link.classList.add('link-style');
+    link.innerHTML = `<i class="fa-solid fa-download fa-2x"></i>`;
+    image.insertAdjacentElement('beforeend',link);
 
-    document.querySelector('#image').src = imageUrl;
 
     removeSpinner();
   } catch (error) {
-    document.querySelector('.msg').textContent = error;
+    removeSpinner();
+    const message = document.querySelector('.image-container');
+    const title = document.createElement('h2');
+    title.classList.add('msg');
+    title.textContent = error;
+    message.insertAdjacentElement('afterbegin', title);
   }
 }
 
