@@ -15,7 +15,7 @@ async function generateImageRequest(prompt, size) {
   try {
     document.querySelector('.image-container').innerHTML = '';
     showSpinner();
-    const response = await fetch('http://localhost:5000/backend/openai/generateimage', {
+    const response = await fetch('https://img-gen-swati.onrender.com/backend/openai/generateimage', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -40,6 +40,7 @@ async function generateImageRequest(prompt, size) {
     const markup = document.createElement('img');
     console.log(imageUrl);
     markup.src = imageUrl;
+    markup.classList.add('turn-01');
     image.insertAdjacentElement('beforeend', markup);
     const link = document.createElement('a');
     link.href = (imageUrl);

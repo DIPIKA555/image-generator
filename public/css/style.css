@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Source+Serif+Pro:ital,wght@1,200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Pacifico&family=Source+Serif+Pro:ital,wght@1,200&display=swap');
 *,
 *:before,
 *:after {
@@ -146,6 +146,8 @@ img {
 }
 img:hover{
   transform: scale(1.1);
+  padding: 12px;
+  border-color:  bisque ;
 }
 .msg {
   font-size: 1.6rem;
@@ -162,11 +164,10 @@ img:hover{
   text-shadow: -1px -1px 0 rgb(178, 34, 34), -2px -2px 0 firebrick,
     -3px -3px 0 firebrick, -30px 20px 40px dimgrey;
 }
-h1.heading {
-  color: #fff;
-}
-h3 .heading {
-  color: rgb(255, 255, 255);
+h3{
+  font-size: 50px;
+  color : cornflowerblue;
+  font-family: 'Dancing Script', cursive;
 }
 
 /* text-shadow: -1px -1px 0 #a71b1b, -2px -2px 0 #ac6a6a, -3px -3px 0 #8e4242, 152px 20px 40px dimgrey; */
@@ -377,4 +378,16 @@ font-family: 'Source Serif Pro', serif;
 
 .link-style{
   color:red;  
+}
+.turn-01{
+  animation-duration: 4s;
+  animation-timing-function: ease-in-out;
+  transform-origin: 50% 50%;
+}
+
+.turn-01 { animation-name: turnOne;}
+
+@keyframes turnOne {
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(360deg);}
 }
