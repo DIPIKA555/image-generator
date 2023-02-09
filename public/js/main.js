@@ -39,6 +39,11 @@ async function generateImageRequest(prompt, size) {
     const image = document.querySelector('.image-container');
     const markup = document.createElement('img');
     console.log(imageUrl);
+    if(size === false){
+      markup.classList.add('img-small');
+    }else{
+      markup.classList.add('img-large');
+    }
     markup.src = imageUrl;
     markup.classList.add('turn-01');
     image.insertAdjacentElement('beforeend', markup);
