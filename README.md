@@ -1,7 +1,5 @@
 # IMG-GEN Using OPENAI's DALL-E Engine
 
-Project Built By Swati Sharma.
-Site Live at: https://img-gen-swati.onrender.com/
 
 ## Languages Used
 
